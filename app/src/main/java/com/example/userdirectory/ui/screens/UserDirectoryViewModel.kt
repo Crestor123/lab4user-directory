@@ -5,13 +5,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.userdirectory.model.UserData
 import com.example.userdirectory.network.DirectoryApi
 import com.example.userdirectory.network.DirectoryApiService
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import java.io.IOException
 
 sealed interface DirectoryUiState {
-    data class Success(val userData: String) : DirectoryUiState
+    data class Success(val userData: List<UserData>) : DirectoryUiState
     object Error : DirectoryUiState
     object Loading : DirectoryUiState
 }
@@ -26,10 +28,12 @@ class DirectoryViewModel : ViewModel() {
 
     fun getUserData() {
         viewModelScope.launch {
-            try {
-                val listResult = DirectoryApi.retrofitService.getUserData()
+            directoryUiState = try {
+                val listResult = DirectoryApi.retrofitService.getUserData().results
                 DirectoryUiState.Success(listResult)
             } catch (e: IOException) {
+                DirectoryUiState.Error
+            } catch (e: HttpException) {
                 DirectoryUiState.Error
             }
         }

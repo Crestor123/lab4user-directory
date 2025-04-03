@@ -17,6 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.userdirectory.R
+import com.example.userdirectory.model.UserData
 import com.example.userdirectory.ui.theme.UserDirectoryTheme
 
 @Composable
@@ -35,12 +36,12 @@ fun HomeScreen(
 }
 
 @Composable
-fun ResultScreen(userData: String, modifier: Modifier = Modifier) {
+fun ResultScreen(userData: List<UserData>, modifier: Modifier = Modifier) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
     ) {
-        Text(text = userData)
+        Text(userData[0].firstName)
     }
 }
 
@@ -61,13 +62,5 @@ fun ErrorScreen(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "Error")
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun ResultScreenPreview() {
-    UserDirectoryTheme {
-        ResultScreen(stringResource(R.string.placeholder_result))
     }
 }

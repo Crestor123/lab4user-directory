@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.retrofit)
     implementation(libs.converter.scalars)
+    implementation(libs.converter.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
