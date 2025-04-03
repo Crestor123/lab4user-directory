@@ -41,7 +41,7 @@ fun ResultScreen(userData: List<UserData>, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center,
         modifier = modifier
     ) {
-        Text(userData[0].firstName)
+        Text(userData[0].userName.firstName)
     }
 }
 
