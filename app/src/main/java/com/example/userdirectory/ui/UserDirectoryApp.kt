@@ -2,6 +2,7 @@ package com.example.userdirectory.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -29,6 +30,8 @@ fun UserDirectoryApp() {
     ) {
         Surface(
             modifier = Modifier.fillMaxSize()
+                .padding(it)    //Without this, content is hidden behind top bar
+                                //Not really sure what's going on here behind the scenes
         ) {
             val directoryViewModel: DirectoryViewModel = viewModel()
             HomeScreen(

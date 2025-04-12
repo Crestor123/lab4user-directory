@@ -11,7 +11,7 @@ data class UserDataResults(
 data class UserName(
     @SerializedName("first")
     val firstName: String,
-    @SerializedName("name")
+    @SerializedName("last")
     val lastName: String
 )
 
