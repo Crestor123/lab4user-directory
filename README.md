@@ -5,6 +5,6 @@ Running the app should be as simple as cloning and building in Android Studio.
 
 ## Screenshots
 
-![Home Screen 1](screenshots/HomeScreen1.png)
-
-![Home Screen 2](screenshots/HomeScreen2.png)
+  <img src="https://github.com/Crestor123/lab4user-directory/blob/ed5997611f0a3a349fd7aa9a3b487e94ad05eda5/screenshots/HomeScreen1.png" width=50% height=50%>
+  
+  <img src="https://github.com/Crestor123/lab4user-directory/blob/ed5997611f0a3a349fd7aa9a3b487e94ad05eda5/screenshots/HomeScreen2.png" width=50% height=50%>
